@@ -1,0 +1,24 @@
+{
+  "name": "js-testing-prac",
+  "version": "1.0.0",
+  "description": "running practice tests",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "watch": "jest --watch *.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JayKowski/js-testing-prac.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JayKowski/js-testing-prac/issues"
+  },
+  "homepage": "https://github.com/JayKowski/js-testing-prac#readme",
+  "devDependencies": {
+    "@babel/preset-env": "^7.11.0",
+    "jest": "^26.4.0"
+  }
+}
