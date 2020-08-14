@@ -1,4 +1,4 @@
-import capitalize from './capitalize.js';
+import capitalize from '../scripts/capitalize';
 
 test('capitalize first letter of a word', () => {
   expect(capitalize('today')).toBe('Today');

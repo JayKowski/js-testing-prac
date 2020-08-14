@@ -1,4 +1,4 @@
-import calculator from './calculator';
+import calculator from '../scripts/calculator';
 
 test('It multiplies numbers', () => {
   expect(calculator.multiply(2, 5)).toBe(10);

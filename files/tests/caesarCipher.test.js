@@ -1,4 +1,4 @@
-import caesarCipher from './caesarCipher';
+import caesarCipher from '../scripts/caesarCipher';
 
 test('It ciphers a string', () => {
   expect(caesarCipher('this is a string')).toBe('uijt jt b tusjoh');
