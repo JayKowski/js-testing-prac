@@ -9,4 +9,3 @@ function reverseString(string) {
 }
 
 export default reverseString;
-// reverseString("something");
