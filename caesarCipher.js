@@ -1,25 +1,32 @@
-function caesarCipher(string){
-  const stringArr=string.split(' ')
-  const alphabet = 'abcdefghijklmnopqrstuvwxyz'
-  const alphabetArr = Array.from(alphabet)
-  let cipheredSentence = []
-  for (let i = 0; i<stringArr.length;i++){
+function caesarCipher(string) {
+  const stringArr = string.split(' ');
+  const alphabet = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  const alphabetArr = Array.from(alphabet);
+  const cipheredSentence = [];
+  for (let i = 0; i < stringArr.length; i++) {
     let cipheredWord = [];
-    for (let j=0;j<stringArr[i].length;j++){
-      let lowerCased = stringArr[i].toLowerCase();
-      let charIndex = alphabetArr.indexOf(lowerCased.charAt(j));
-      let nextChar = charIndex === 25 ? alphabetArr[0] : alphabetArr[charIndex+1];
-      cipheredWord.push(nextChar)
+    for (let j = 0; j < stringArr[i].length; j++) {
+      if (alphabetArr.includes(stringArr[i].charAt(j))) {
+        const currentWord = stringArr[i];
+        const charIndex = alphabetArr.indexOf(currentWord.charAt(j));
+        const nextChar = charIndex === 25 ? alphabetArr[0] : 
+              charIndex === 51 ? alphabetArr[26] : 
+              alphabetArr[charIndex + 1];
+        cipheredWord.push(nextChar);
+      } else {
+        cipheredWord.push(stringArr[i].charAt(j));
+      }
     }
-    cipheredSentence.push(cipheredWord)
-    cipheredWord = []    
+    cipheredSentence.push(cipheredWord);
+    cipheredWord = [];
   }
-  let completeSentence = cipheredSentence;
-  let joinedWordArr=[];
-  for (let k = 0; k<completeSentence.length; k++){
-    joinedWordArr.push(completeSentence[k].join(""))
+  const completeSentence = cipheredSentence;
+  const joinedWordArr = [];
+  for (let k = 0; k < completeSentence.length; k++) {
+    joinedWordArr.push(completeSentence[k].join(''));
   }
-  return joinedWordArr.join(" ")
+
+  return joinedWordArr.join(' ');
 }
 
-console.log(caesarCipher('aaa bbb www zzz asdasd'))
+export default caesarCipher;
